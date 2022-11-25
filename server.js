@@ -42,6 +42,7 @@ const upload = multer({storage : storage})
 // ****** SEND API
 app.post("/send", upload.any() , async (req, res) => {
   try {
+    console.log(req.body, req.files)
     let attachments = [];
     for(let i = 0; i < req.files.length; i++){
       let fileDetailes = {
